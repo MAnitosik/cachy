@@ -1,4 +1,4 @@
-sudo pacman -S --noconfirm --needed gnome-shell gdm
+sudo pacman -S --noconfirm --needed gnome-shell gdm cachyos-gnome-settings
 sudo pacman -S --noconfirm --needed --asdeps gnome-bluetooth-3.0 gst-plugin-pipewire gst-plugins-good
 sudo pacman -S --noconfirm --needed system-config-printer networkmanager
 sudo systemctl enable gdm
