@@ -47,19 +47,19 @@ flatpak install -y flathub io.github.wartybix.Constrict
 flatpak install -y flathub com.usebottles.bottles
 
 sudo pacman -S --noconfirm --needed profile-sync-daemon
-systemctl enable --user --now psd
-sudo systemctl disable --now systemd-oomd
+systemctl enable --user --now psd.service
+sudo systemctl disable --now systemd-oomd.service
 sudo pacman -S --noconfirm --needed bpftune-git
-sudo systemctl enable --now bpftune
+sudo systemctl enable --now bpftune.service
 sudo pacman -S --noconfirm --needed bluez
-sudo systemctl enable --now bluetooth
-systemctl disable --user --now arch-update arch-update-tray
+sudo systemctl enable --now bluetooth.service
+systemctl disable --user --now arch-update.timer arch-update-tray.service
 
-sudo systemctl disable --now power-profiles-daemon
+sudo systemctl disable --now power-profiles-daemon.service
 sudo pacman -Rns --noconfirm power-profiles-daemon
-sudo pacman -S --noconfirm --needed cpupower
+sudo pacman -S --noconfirm --needed cpupower.service
 curl -fsSL https://raw.githubusercontent.com/MAnitosik/cachy/refs/heads/main/etc/default/cpupower-service.conf | sudo tee /etc/default/cpupower-service.conf > /dev/null
-sudo systemctl enable --now cpupower
+sudo systemctl enable --now cpupower.service
 curl -fsSL https://raw.githubusercontent.com/MAnitosik/cachy/refs/heads/main/etc/systemd/resolved.conf.d/resolved.conf | sudo tee /etc/systemd/resolved.conf.d/resolved.conf > /dev/null
 curl -fsSL https://raw.githubusercontent.com/MAnitosik/cachy/refs/heads/main/etc/hosts | sudo tee /etc/hosts > /dev/null
 
@@ -81,8 +81,8 @@ sudo pacman -S --noconfirm --needed telegram-desktop vesktop-bin torbrowser-laun
 sudo pacman -S --noconfirm --needed ventoy-bin
 yay -S --noconfirm --needed amneziavpn-bin
 sudo sh -c "$(curl -Ls https://github.com/v2rayA/v2rayA-installer/raw/main/installer.sh)" @ --with-xray
-sudo systemctl enable --now v2raya
-sudo systemctl enable --now lactd
+sudo systemctl enable --now v2raya.service
+sudo systemctl enable --now lactd.service
 
 
 yay -S --noconfirm --needed --asdeps jdk-temurin
