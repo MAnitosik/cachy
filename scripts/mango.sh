@@ -6,6 +6,8 @@ sudo pacman -S --noconfirm --needed baobab decibels showtime gnome-disk-utility 
 sudo pacman -S --noconfirm --needed curtail video-trimmer fragments gnome-boxes
 sudo pacman -S --noconfirm --needed gnome-shell-extensions extension-manager gvfs-goa gvfs-dnssd
 
+sudo pacman -S --noconfirm --needed yay-bin
+
 ## CachyOS
 ##
 sudo pacman -S --noconfirm --needed appmenu-gtk-module libdbusmenu-glib
@@ -26,7 +28,7 @@ sudo pacman -S --noconfirm --needed heroic-games-launcher-bin steam
 yay -S --noconfirm --needed hydra-launcher-bin
 sudo pacman -S --noconfirm --needed proton-cachyos-slr wine-cachyos
 mkdir -p ~/.config/environment.d/
-curl -fsSL https://raw.githubusercontent.com/MAnitosik/cachy/refs/heads/main/config/environment.d/gaming.conf | sudo tee ~/.config/environment.d/gaming.conf > /dev/null
+curl -fsSL https://raw.githubusercontent.com/MAnitosik/cachy/refs/heads/main/config/environment.d/gaming.conf | tee ~/.config/environment.d/gaming.conf > /dev/null
 
 curl -fsSL https://raw.githubusercontent.com/MAnitosik/cachy/refs/heads/main/etc/udev/rules.d/60-ioschedulers.rules | sudo tee /etc/udev/rules.d/60-ioschedulers.rules > /dev/null
 
@@ -39,8 +41,6 @@ sudo systemctl enable --now scx_loader.service
 ## CachyOS
 
 flatpak install -y flathub io.github.wartybix.Constrict
-
-sudo pacman -S --noconfirm --needed yay-bin
 
 sudo pacman -S --noconfirm --needed profile-sync-daemon
 sudo systemctl enable --now psd
@@ -66,6 +66,8 @@ sudo pacman -S --noconfirm --needed cachyos-firefox-settings
 sudo pacman -S --noconfirm --needed zed github-cli pycharm-community-edition
 flatpak install -y flathub org.desktop_plus.desktop-plus
 
+sudo pacman -S --noconfirm --needed mesa vulkan-radeon
+yay -S --noconfirm --needed amf-amdgpu
 sudo pacman -S --noconfirm --needed --asdeps obs-studio-plugin-browser
 sudo pacman -S --noconfirm --needed obs-studio gimp
 yay -S --noconfirm --needed photogimp
