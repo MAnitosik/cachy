@@ -1,3 +1,4 @@
+sudo cachyos-rate-mirrors
 sudo pacman -Scc
 sudo pacman -Syyuu
 
