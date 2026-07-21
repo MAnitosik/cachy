@@ -1,4 +1,0 @@
-Server = https://archlinux.gay/cachy/repo/$arch/$repo
-Server = https://mirror.jura12.ru/repo/$arch/$repo
-Server = https://mirror.cachy-arch.ru/cachyos/repo/$arch/$repo
-Server = https://wan.metrosg.ru/cachyos/repo/$arch/$repo

@@ -24,7 +24,6 @@ sudo tee -a /etc/default/limine > /dev/null <<'EOF'
 
 KERNEL_CMDLINE[default]+=" manitosik=1 zswap.enabled=0 nowatchdog quiet splash amd_pstate=passive rcutree.enable_rcu_lazy=1 amdgpu.ppfeaturemask=0xffffffff"
 EOF
-sudo limine-mkinitcpio
 
 sudo pacman -S --noconfirm --needed cachyos-gaming-meta
 sudo pacman -S --noconfirm --needed gamescope goverlay mangohud lib32-mangohud
@@ -91,5 +90,7 @@ yay -S --noconfirm --needed elyprismlauncher-bin
 flatpak install -y flathub org.vinegarhq.Sober org.vinegarhq.Vinegar
 sudo pacman -S --noconfirm --needed --asdeps hip-runtime-amd hiprt
 sudo pacman -S --noconfirm --needed blender godot-mono
+
+sudo limine-mkinitcpio
 
 echo "use cachyos-rate-mirrors sometimes, also dont enable vulkan shaders pre-caching in steam settings"
