@@ -1,3 +1,4 @@
+sudo pacman -Scc
 curl -fsSL https://raw.githubusercontent.com/MAnitosik/cachy/refs/heads/main/etc/pacman.d/mirrorlist | sudo tee /etc/pacman.d/mirrorlist > /dev/null
 sudo pacman -Syyuu
 
