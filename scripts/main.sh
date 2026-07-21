@@ -1,3 +1,6 @@
+curl -fsSL https://raw.githubusercontent.com/MAnitosik/cachy/refs/heads/main/etc/pacman.d/mirrorlist | sudo tee /etc/pacman.d/mirrorlist > /dev/null
+sudo pacman -Syyuu
+
 sudo pacman -S --noconfirm --needed gnome-shell gdm cachyos-gnome-settings
 sudo pacman -S --noconfirm --needed --asdeps gnome-bluetooth-3.0 gst-plugin-pipewire gst-plugins-good
 sudo pacman -S --noconfirm --needed system-config-printer networkmanager
@@ -26,7 +29,6 @@ sudo pacman -S --noconfirm --needed cachyos-gaming-meta
 sudo pacman -S --noconfirm --needed gamescope goverlay mangohud lib32-mangohud
 sudo pacman -S --noconfirm --needed heroic-games-launcher-bin steam
 yay -S --noconfirm --needed hydra-launcher-bin
-sudo pacman -S --noconfirm --needed proton-cachyos-slr wine-cachyos
 mkdir -p ~/.config/environment.d/
 curl -fsSL https://raw.githubusercontent.com/MAnitosik/cachy/refs/heads/main/config/environment.d/gaming.conf | tee ~/.config/environment.d/gaming.conf > /dev/null
 
@@ -42,14 +44,16 @@ sudo systemctl enable --now scx_loader.service
 
 flatpak install -y flathub io.github.wartybix.Constrict
 
+flatpak install -y flathub com.usebottles.bottles
+
 sudo pacman -S --noconfirm --needed profile-sync-daemon
-sudo systemctl enable --now psd
+systemctl enable --user --now psd
 sudo systemctl disable --now systemd-oomd
 sudo pacman -S --noconfirm --needed bpftune-git
 sudo systemctl enable --now bpftune
 sudo pacman -S --noconfirm --needed bluez
 sudo systemctl enable --now bluetooth
-sudo systemctl disable --now arch-update arch-update-tray
+systemctl disable --user --now arch-update arch-update-tray
 
 sudo systemctl disable --now power-profiles-daemon
 sudo pacman -Rns --noconfirm power-profiles-daemon
